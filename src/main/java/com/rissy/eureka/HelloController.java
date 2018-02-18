@@ -29,18 +29,18 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/hello1", method = RequestMethod.GET)
-    public String hello1(@RequestParam String name) {
+    public String hello(@RequestParam String name) {
 
         return "Hello " + name;
     }
 
     @RequestMapping(value = "/hello2", method = RequestMethod.GET)
-    public User hello2(@RequestHeader String name, @RequestHeader int age) {
+    public User hello(@RequestHeader String name, @RequestHeader int age) {
         return new User(name, age);
     }
 
     @RequestMapping(value = "/hello3", method = RequestMethod.POST)
-    public String hello3(@RequestBody User user) {
+    public String hello(@RequestBody User user) {
         return "Hello " + user.getName() + ", " + user.getAge();
     }
 }
